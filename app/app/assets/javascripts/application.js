@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready( function() {
+  if( !navigator.geolocation ) {
+    // tell the user that we can't access geo info, maybe unsupported browser!
+  };
+});
+
+function lookupPerformers() {
+  navigator.geolocation.getCurrentPosition( function(p) {
+    console.log(p.coords.latitude, p.coords.longitude)
+  },
+  function(e) {
+  });
+};
