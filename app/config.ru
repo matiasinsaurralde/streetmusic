@@ -1,0 +1,2 @@
+require './streetmusic'
+run StreetMusicApp
