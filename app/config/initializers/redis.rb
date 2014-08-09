@@ -1,3 +1,4 @@
+require 'redis'
 module RedisCache
   class << self
     def redis
