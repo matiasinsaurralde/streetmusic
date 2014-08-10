@@ -18,7 +18,12 @@ class PerformersController < ApplicationController
     end
 
     def show
-        @performer = Performer.find(session[:performer_id])
+        if session[:performer_id]
+            @performer = Performer.find(session[:performer_id])
+        else
+            @performer = Performer.find(params[:format])
+        end
+
     end
 
     def edit
