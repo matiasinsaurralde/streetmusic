@@ -3,6 +3,7 @@ finding performers!
 
 <script>
   $(document).ready ( lookupPerformers );
+
 </script>
 
 
@@ -15,8 +16,25 @@ finding performers!
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="../stylesheets/site.css"/>
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsZcIOcxv6LMjgknDGOev1tSu-G3x4v5E"></script>
     <script type="text/javascript" src="../javascripts/maps.js"></script>
+
+    <script>
+    function initialize() {
+    var mapOptions = {
+        center: new google.maps.LatLng(42.3581, -71.0636),
+        zoom: 14
+    };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
   </head>
   <body>
     <h1>Maps</h1>
