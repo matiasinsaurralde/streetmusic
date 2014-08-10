@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'sessions/new', to: 'sessions#create'
   get 'log_out' => 'sessions#destroy', :as => "log_out"
 
+  post 'twilio/io', to: 'twilio#io'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
