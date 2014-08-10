@@ -42,5 +42,6 @@ class SmsController < ApplicationController
       :to => '+14438516506',
       :body => 'Hey there!'
     )
+    render text: "asdf"
   end
 end
