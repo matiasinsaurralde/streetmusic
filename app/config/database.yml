@@ -24,6 +24,6 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 5
-  username: streetmusic
-  password: 36seMmkM
-  database: streetmusic
+  username: music
+  password: 12345
+  database: music

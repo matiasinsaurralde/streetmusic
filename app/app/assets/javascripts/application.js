@@ -31,7 +31,8 @@ function lookupPerformers() {
                 e_marker = new google.maps.Marker({
                   position: new google.maps.LatLng( parseFloat(splits[0]), parseFloat(splits[1]) ),
                   map: window.map,
-                  title: e.name
+                  title: e.name,
+                  icon: '/music.png'
                 });
               };
             } );
