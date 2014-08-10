@@ -1,5 +1,4 @@
 class PerformersController < ApplicationController
-<<<<<<< HEAD
     def index
     end
 
@@ -9,7 +8,7 @@ class PerformersController < ApplicationController
     def new
     end
 
-    def view
+    def show
         # when you see an artist page
         # allows to donate
     end
@@ -18,7 +17,7 @@ class PerformersController < ApplicationController
         # an artist can edit his profile
     end
 
-    def delete
+    def destroy
         # delete yourself from database?
     end
 

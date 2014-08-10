@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  root 'performers#index'
+  root 'home#intro'
+
+  get 'home/listener' => 'home#listener'
+  get 'home/musician' => 'home#musician'
 
   resources :performers
   post 'performers/lookup' => 'performers#lookup'
+  get 'performers/show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
