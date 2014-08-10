@@ -8,10 +8,14 @@
 <!--     <form action="post.html" method="get">
         <input type="submit" value="Post" name="post" id="post"/>
     </form> -->
+    <% if session[:performer_id] %>
     <br/>
     <form action="/performers/edit" method="get">
         <input type="submit" value="Profile" onclick="window.location='/performers/edit';"/>
     </form>
+    <% end %>
+
+
 <br/>
     <form action="/sessions/new" method="get">
         <input type="submit" value="Log In" onclick="window.location='/sessions/new';"/>

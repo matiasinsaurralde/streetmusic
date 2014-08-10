@@ -134,6 +134,16 @@ input {
     font-weight: bold;
 }
 
+select {
+    height: 2.5em;
+    width: 5em;
+    font-size: 1.5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    background-color: rgba(200,200,200, .7);
+    text-shadow: 1px 1px 10px #FFFFFF;
+    font-weight: bold;
+}
 
 h2 {
     color: rgba(255,255,255,.8);

@@ -18,7 +18,7 @@ class PerformersController < ApplicationController
     end
 
     def show
-        @performer = Performer.find(params[:id])
+        @performer = Performer.find(session[:performer_id])
     end
 
     def edit

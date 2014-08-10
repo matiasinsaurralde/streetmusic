@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'performers/show' => 'performers#show'
   get 'performers' => 'performers#index'
 
-  get 'performers/edit' => 'performers#edit'
+  get 'performers/edit' => 'performers#show'
   get 'performers/new' => 'performers#new'
 
   get 'performers/delete' => "performers#delete"
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :sessions
   post 'sessions/new', to: 'sessions#create'
   get 'log_out' => 'sessions#destroy', :as => "log_out"
+
 
   # post 'twilio/receive' => 'twilio#receive'
 
