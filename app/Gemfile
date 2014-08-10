@@ -40,3 +40,4 @@ gem 'unicorn'
 
 gem 'redis'
 
+gem 'pgsql', group: :production
