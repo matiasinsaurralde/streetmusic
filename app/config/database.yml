@@ -25,4 +25,5 @@ production:
   encoding: utf8
   pool: 5
   username: streetmusic
+  password: 36seMmkM
   database: streetmusic
