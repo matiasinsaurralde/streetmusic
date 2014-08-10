@@ -16,8 +16,8 @@ Rails.application.routes.draw do
 
   # resource :sms, only: :create
 
-  post '/sms', to: 'sms#create'
-  get '/sms', to: 'sms#create'
+  post '/sms' => 'sms#create'
+  get '/sms' => 'sms#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
