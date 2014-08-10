@@ -21,9 +21,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  pool: 5
-  username: music
-  password: 12345
-  database: music
+  <<: *default
+  database: db/production.sqlite3
