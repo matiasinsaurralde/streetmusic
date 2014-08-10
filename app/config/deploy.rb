@@ -64,6 +64,11 @@ namespace :deploy do
   #end
 
   #after :publishing, :restart
+  after :publishing do
+    on roles(:app) do
+      execute "cd #{fetch(:deploy_to)}/current && bundle exec rake assets:precompile RAILS_ENV=#{fetch(:rails_env)}"
+    end
+  end
 
   #after :restart, :clear_cache do
   #  on roles(:web), in: :groups, limit: 3, wait: 10 do
