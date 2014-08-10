@@ -6,8 +6,18 @@ class TwilioController < ApplicationController
         message_body = params["Body"]
         from_number = params["From"]
 
-        SMSLogger.log_text_message from_number, message_body
+        response = Twilio::TwiML::Response.new do |r|
+          r.Message "help this doesnt work"
+        end
+
+        # SMSLogger.log_text_message from_number, message_body
+
+        render_twiml response
     end
+
+
+
+
 
     def send
         number_to_send_to = params[:number_to_send_to]

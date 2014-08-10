@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   post 'sessions/new', to: 'sessions#create'
   get 'log_out' => 'sessions#destroy', :as => "log_out"
 
-  post 'twilio/receive', to: 'twilio#receive'
+  # post 'twilio/receive' => 'twilio#receive'
+
+  resource :sms, only: :create
 
 
   # The priority is based upon order of creation: first created -> highest priority.
