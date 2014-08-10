@@ -4,9 +4,16 @@ Rails.application.routes.draw do
   get 'home/listener' => 'home#listener'
   get 'home/musician' => 'home#musician'
 
-  resources :performers
-  post 'performers/lookup' => 'performers#lookup'
-  get 'performers/show'
+  # resources :performers
+  get 'performers/lookup' => 'performers#lookup'
+  get 'performers/show' => 'performers#show'
+  get 'performers' => 'performers#index'
+
+  get 'performers/edit' => 'performers#edit'
+  get 'performers/new' => 'performers#new'
+
+  get 'performers/delete' => "performers#delete"
+  post 'performers' => 'performers#create'
 
   resources :sessions
   post 'sessions/new', to: 'sessions#create'

@@ -3,17 +3,14 @@
   <head>
   </head>
   <body>
+    <div id="bg">
     <h1>Listener Menu</h1>
-    <h2>note:buttons do not work</h2>
 
-    <%= link_to 'Index', performers_path %>
-        <input type="submit" value="Maps" onclick="window.location='link_to performers#index';"/>
-    <br/>
-    <%= link_to 'Lookup', performers_lookup_path %>
+<!--         <input type="submit" value="Maps" onclick="window.location='/performers';"/>
+    <br/> -->
         <input type="submit" value="Lookup" onclick="window.location='/performers/lookup';"/>
-    <br/>
-    <%= link_to 'Show', performers_show_path %>
-        <input type="submit" value="View" onclick="window.location='/performers/view';"/>
+    <br/> </br>
+        <input type="submit" value="View" onclick="window.location='/performers';"/>
 
 
   </body>

@@ -1,17 +1,19 @@
-<h1>Log In</h1>
+<div id="bg">
+    <h1>Log In</h1>
 
 <%= form_for :session do |f| %>
-    <div style="background-color:white"  class="field">
+
+    <div class="field">
         <%= f.label :email %> <br/>
         <%= f.text_field :email %>
     </div>
-    <div style="background-color:white" class="field">
+    <div class="field">
         <%= f.label :password %> <br/>
         <%= f.password_field :password %>
     </div>
     <div class="actions">
-        <%= f.submit "Log In" %>
+        <%= f.submit "Submit" %>
     </div>
 <% end %>
-
-<%= link_to 'Intro', root_path %>
+</br>
+<input type="submit" value="Back" onclick="window.location='/';"/>

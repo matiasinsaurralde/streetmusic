@@ -5,16 +5,20 @@
   </head>
   <body>
     <div id="bg">
-
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
     </div>
-    <h1></h1>
+    <h1>Street Music</h1>
     <% if session[:performer_id] %>
     <h2 id="welcome">Welcome, <%= Performer.find(session[:performer_id])[:email] %>!</h2>
     <% end %>
     <input type="submit" value="Listener" onclick="window.location='/home/listener';"/>
     <br/><br/>
     <input type="submit" value="Musician" onclick="window.location='/home/musician';"/>
+    <br/><br/>
+    <input type="submit" value="Logout" onclick="window.location='log_out';"/>
     <br/>
-    <%= link_to "logout", "log_out" %>
+
+
+
   </body>
 </html>

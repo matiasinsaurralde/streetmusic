@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h1>List of Musicians</h1>
+    <div id="bg">
+
+
+
+        <div id="listholder">
+                    <input type="submit" value="Back" onclick="window.location='/';"/>
+    <br/> </br>
+
+    <% @performers.each do |p| %>
+        <div class="listentry">
+          <hr><p>email: <%= p.email %></p>
+          <p>name: <%= p.name %></p>
+        <!--       <td><%= link_to 'Destroy', performers_path(p), method: :delete %><hr></td>
+              <br/> -->
+        </div>
+
+
+
+    <% end %>
+</div>
+</body>
+</html>

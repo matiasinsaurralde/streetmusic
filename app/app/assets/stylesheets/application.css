@@ -20,12 +20,18 @@
     width: 100%;
     top: 0;
     left: 0;
+    z-index: -1;
     background-image: url('musicians.jpg');
+    background-size: cover;
+
+
+    /*background-repeat: no-repeat;
+
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
-    filter: blur(5px);
+    filter: blur(5px);*/
 }
 
 body {
@@ -45,16 +51,95 @@ body {
 h1 {
     margin-top:10%;
     margin-bottom: 5%;
-    font-family: sans-serif;
-    background-color:white;
-    color:black;
+    /*font-family: sans-serif;*/
+    /*background-color:white;*/
+    color:#FFFFFF;
+    text-shadow: 3px 4px #333366;
+    font-size: 3em;
     font-weight:300;
+    font-family: 'Roboto Slab', serif;
 }
 
+.field {
+    margin-bottom: 1em;
+
+}
+
+hr {
+    margin-top: -.1em;
+    margin-bottom: -.1em;
+}
+
+p {
+    margin-top: .2em;
+    margin-left: 1em;
+    margin-bottom: .2em;
+    font-family: sans-serif;
+}
+
+.entry {
+    background-color:white;
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+    text-align:left;
+    opacity: 0.8;
+}
+
+.listentry {
+    display: table;
+    margin: 0 auto;
+    background-color:white;
+/*    border-style:solid;
+    border-width:1px;
+    border-color:black;*/
+    text-align:left;
+    opacity: 0.8;
+    width: 70%;
+}
+
+.listentry p {
+    margin-bottom: .2em;
+    margin-top: .2em;
+}
+
+#listholder {
+    text-align: center;
+
+    width: 100%;
+    margin-top: 20%;
+}
+
+#firstentry {
+    background-color:rgb(210,255,210);
+
+}
+
+
+
+label {
+    font-family: sans-serif;
+    color: white;
+    font-size: 1.5em;
+    text-shadow: 4px 2px #111144;
+}
+
+input {
+    height: 1.7em;
+    font-size: 1.1em;
+    padding-left: .5em;
+    padding-right: .5em;
+    background-color: rgba(200,200,200, .7);
+    text-shadow: 1px 1px 10px #FFFFFF;
+    font-weight: bold;
+}
+
+
 h2 {
-    color: yellow;
+    color: rgba(255,255,255,.8);
     font-weight: 100;
     font-family: sans-serif;
+    text-shadow: 3px 1px #333366;
 }
 
 .header {
@@ -79,7 +164,8 @@ input[type=submit] {
     font-weight: 100;
     color: white;
     background-color: black;
-    opacity: .5;
+    opacity: .7;
+    text-shadow: none;
 }
 
 input[type=submit]:hover {
