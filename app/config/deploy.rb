@@ -33,7 +33,7 @@ namespace :deploy do
 
   task :restart do
     on roles(:app) do
-      execute "if [ -f #{fetch(:unicorn_pid)} ]; then kill -USR2 `cat #{fetch(:unicorn_pid)}`; else cd /var/www/streetmusic/app && bundle exec unicorn -c #{fetch(:unicorn_conf)} -E #{fetch(:rails_env)} -D; fi"
+      execute "if [ -f #{fetch(:unicorn_pid)} ]; then kill -USR2 `cat #{fetch(:unicorn_pid)}`; else cd #{fetch(:deploy_to)}/current/app && bundle exec unicorn -c #{fetch(:unicorn_conf)} -E #{fetch(:rails_env)} -D; fi"
     end
   end
   task :start do
@@ -62,13 +62,14 @@ namespace :deploy do
       # execute :touch, release_path.join('tmp/restart.txt')
   #  end
   #end
-
-  #after :publishing, :restart
-  after :publishing do
+  task :precompile_assets do
     on roles(:app) do
-      execute "cd #{fetch(:deploy_to)}/current && bundle exec rake assets:precompile RAILS_ENV=#{fetch(:rails_env)}"
+      execute "cd #{fetch(:deploy_to)}/current/app && bundle exec rake assets:precompile RAILS_ENV=#{fetch(:rails_env)}"
     end
   end
+
+  #after :publishing, :restart
+  after :publishing, :precompile_assets
 
   #after :restart, :clear_cache do
   #  on roles(:web), in: :groups, limit: 3, wait: 10 do
