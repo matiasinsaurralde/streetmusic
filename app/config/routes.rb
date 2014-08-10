@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#intro'
+  root to: 'home#intro'
 
   get 'home/listener' => 'home#listener'
   get 'home/musician' => 'home#musician'
@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :performers
   post 'performers/lookup' => 'performers#lookup'
   get 'performers/show'
+
+  resources :sessions
+  post 'sessions/new', to: 'sessions#create'
+  get 'log_out' => 'sessions#destroy', :as => "log_out"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,14 +3,22 @@ class PerformersController < ApplicationController
     end
 
     def create
+        # render text: params[:performer].inspect
+        @performer = Performer.new(performer_params)
+        if @performer.save
+            session[:performer_id] = @performer.id
+            redirect_to @performer, notice: "Thank you for signing up!"
+        else
+            redirect_to ""
+        end
     end
 
     def new
+        @performer = Performer.new
     end
 
     def show
-        # when you see an artist page
-        # allows to donate
+        @performer = Performer.find(params[:id])
     end
 
     def edit
@@ -18,7 +26,10 @@ class PerformersController < ApplicationController
     end
 
     def destroy
-        # delete yourself from database?
+        @performer = Performer.find(params[:id])
+        @performer.destroy
+
+        redirect_to ""
     end
 
     def lookup
@@ -26,4 +37,9 @@ class PerformersController < ApplicationController
         render :json => Performer.all.map { |p| { 'id' => p.id, 'name' => p.name } }
         # you need to POST to /lookup with param 'position', this param will be the value of navigator.geolocation.getCurrentPosition
     end
+
+    private
+        def performer_params
+            params.require(:performer).permit(:name, :email, :password, :password_confirmation)
+        end
 end
