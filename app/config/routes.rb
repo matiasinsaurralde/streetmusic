@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # resources :performers
   post 'performers/lookup' => 'performers#lookup'
+  get 'performers/search' => 'performers#search'
   get 'performers/show' => 'performers#show'
   get 'performers' => 'performers#index'
 
