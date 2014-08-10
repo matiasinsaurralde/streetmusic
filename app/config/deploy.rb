@@ -5,7 +5,7 @@ set :repo_url, 'git@github.com:matiasinsaurralde/streetmusic.git'
 
 set :deploy_to, '/var/www/streetmusic'
 set :scm, :git
-set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
+set :unicorn_conf, "#{deploy_to}/current/app/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
 set :rails_env, 'production'
