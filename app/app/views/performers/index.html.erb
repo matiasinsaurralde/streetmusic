@@ -1,4 +1,4 @@
-finding performers!
+<!-- finding performers! -->
 
 
 <script>
@@ -7,38 +7,135 @@ finding performers!
 </script>
 
 
-<br />
-<a href="lookup">are you a performer? signup now</a>
+<!-- <br />
+<a href="lookup">are you a performer? signup now</a> -->
 
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="../stylesheets/site.css"/>
     <style type="text/css">
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 100% }
+      #map-canvas { height: 100%; width: 70%; float: right;}
+      #left {float: left; height: 100%; width: 30%;}
     </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsZcIOcxv6LMjgknDGOev1tSu-G3x4v5E"></script>
-    <script type="text/javascript" src="../javascripts/maps.js"></script>
 
     <script>
+    var map;
+    var marker;
     function initialize() {
-    var mapOptions = {
+      var mapOptions = {
         center: new google.maps.LatLng(42.3581, -71.0636),
-        zoom: 14
-    };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        zoom: 20
+      };
+      map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+      var myLatlng = new google.maps.LatLng(42.3581, -71.0636);
+      var mapOptions = {
+        zoom: 4,
+        center: myLatlng
+      }
+
+      // To add the marker to the map, use the 'map' property
+      marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title:"Hello World!"
+      });
     }
     google.maps.event.addDomListener(window, 'load', initialize);
+
+    function moveMarker( smap, smarker, lat, lon ) {
+        smarker.setPosition( new google.maps.LatLng( lat, lon ) );
+        smap.panTo( new google.maps.LatLng( lat, lon ) );
+    };
+      window.lat = 42.3581;
+      window.lon = -71.0636;
+    var inc = 0;
+    function updatePerformers() {
+      // should be doing this for all performers?
+
+      // inc+= 0.1;
+      navigator.geolocation.getCurrentPosition(
+        function(p) {
+          window.lat = p.coords.latitude;
+          window.lon = p.coords.longitude;
+          // console.log(lat,lon);
+        },
+        function(e) {
+        }
+      );
+
+      console.log(window.lat,window.lon);
+      moveMarker(map, marker, window.lat, window.lon);
+
+
+      };
+
+      // update marker.
+
+
+    function lookupPerformers() {
+      navigator.geolocation.getCurrentPosition( function(p) {
+        $.post( "/performers/lookup",
+                { 'position': 1 }, function( data ) {
+                console.log( 'receiving response!: ', data);
+                } );
+        // console.log(p.coords.latitude, p.coords.longitude)
+      },
+      function(e) {
+      });
+    };
+
+
+    setInterval(function() {
+      updatePerformers();
+    }, 5000);
+
 
     </script>
   </head>
   <body>
-    <h1>Maps</h1>
+    <div id="left">
+      <h1>Map</h1>
+      <h2>This will list all the nearby performers.</h2>
+
+      <div style="background-color:white; border-style:solid; border-width:1px; border-color:black; text-align:left;">
+        <form>
+          <p>Search for Performers: <input type="text"/></p>
+          <p>(Now only works by name)</p>
+          <div style="margin:20px; margin-left:50px; background-color:white; border-style:solid; border-width:1px; border-color:black; text-align:left;">
+            <p>Name</p>
+            <p>Styles/tags</p>
+            <p>Distance?</p>
+        </div>
+
+        </form>
+      </div>
+
+      <div style="background-color:white; border-style:solid; border-width:1px; border-color:black; text-align:left;">
+        <p>Name</p>
+        <p>Styles/tags</p>
+        <p>Distance?</p>
+      </div>
+
+      <div style="background-color:white; border-style:solid; border-width:1px; border-color:black; text-align:left;">
+        <p>Name</p>
+        <p>Styles/tags</p>
+        <p>Distance?</p>
+      </div>
+
+      <div style="background-color:white; border-style:solid; border-width:1px; border-color:black; text-align:left;">
+        <p>Name</p>
+        <p>Styles/tags</p>
+        <p>Distance?</p>
+      </div>
+    </div>
     <div id="map-canvas"/>
+
   </body>
 </html>
 
