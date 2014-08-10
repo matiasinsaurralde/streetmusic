@@ -51,7 +51,7 @@
         center: new google.maps.LatLng(window.lat, window.lon),
         zoom: 16
       };
-      map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+      window.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
       var myLatlng = new google.maps.LatLng(window.lat, window.lon);
       var mapOptions = {
         zoom: 4,
@@ -102,6 +102,7 @@
 
 
     setInterval(function() {
+      lookupPerformers();
       updatePerformers();
     }, 5000);
 

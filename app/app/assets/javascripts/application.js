@@ -25,7 +25,15 @@ function lookupPerformers() {
   navigator.geolocation.getCurrentPosition( function(p) {
     $.post( "/performers/lookup",
             { 'position': p.coords.latitude+','+p.coords.longitude }, function( data ) {
-            console.log( 'receiving response!: ', data);
+              for ( i in data ) {
+                e = data[i];
+                splits = e.position.split(',');
+                e_marker = new google.maps.Marker({
+                  position: new google.maps.LatLng( parseFloat(splits[0]), parseFloat(splits[1]) ),
+                  map: window.map,
+                  title: e.name
+                });
+              };
             } );
     console.log(p.coords.latitude, p.coords.longitude)
   },
