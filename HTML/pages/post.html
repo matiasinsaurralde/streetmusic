@@ -6,10 +6,10 @@
   <body>
     <h1>Post</h1>
     <form name="input" action="post_form.html" method="post">
-	 Location:<input class="musician_posting" type="text" name="location"><br/>
-     Time:<input class="musician_posting" type="datetime" name="time"><br/>
-     Description:<br/><input class="musician_posting" type="textarea" name="description"><br/>
-     <input class="musician_posting" type="submit" value="Submit">
+	   <input class="musician_posting" value="Location" type="text" name="location"  onclick='javascript: this.value = ""'><br/><br/>
+     <input class="musician_posting" value="Time" type="date" name="time" onclick='javascript: this.value = ""'><br/><br/>
+     <textarea class="musician_posting" rows="5" name="description" onclick='javascript: this.value = ""'>Description pls</textarea><br/><br/>
+     <input class="musician_posting" id="submit_button" type="submit" value="Submit">
     </form>
   </body>
 </html>
