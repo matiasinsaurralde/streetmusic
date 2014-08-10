@@ -7,7 +7,7 @@ class PerformersController < ApplicationController
         @performer = Performer.new(performer_params)
         if @performer.save
             session[:performer_id] = @performer.id
-            redirect_to @performer, notice: "Thank you for signing up!"
+            redirect_to @performer
         else
             redirect_to ""
         end

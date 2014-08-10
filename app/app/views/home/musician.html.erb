@@ -9,10 +9,12 @@
         <input type="submit" value="Post" name="post" id="post"/>
     </form> -->
     <% if session[:performer_id] %>
+    <h2 id="welcome">Welcome, <%= Performer.find(session[:performer_id])[:email] %>!</h2>
     <br/>
     <form action="/performers/edit" method="get">
         <input type="submit" value="Profile" onclick="window.location='/performers/edit';"/>
     </form>
+
     <% end %>
 
 
