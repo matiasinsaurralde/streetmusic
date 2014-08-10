@@ -5,9 +5,10 @@
   </head>
   <body>
     <div id="bg">
-    <h1>Placeholder for paypal</h1>
-    <h2>Also personal site</h2>
-    <h2>email: <%= @performer.email %></h2>
+    <h1><%= @performer.name %>'s Profile</h1>
+    <h2>email: <%= @performer.email%> </h2>
+    <br/><br/>
+
 
      <form style="display: block;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
        <input type="hidden" name="cmd" value="_xclick">
