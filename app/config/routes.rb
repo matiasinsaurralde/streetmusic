@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'home/musician' => 'home#musician'
 
   # resources :performers
-  get 'performers/lookup' => 'performers#lookup'
+  post 'performers/lookup' => 'performers#lookup'
   get 'performers/show' => 'performers#show'
   get 'performers' => 'performers#index'
 

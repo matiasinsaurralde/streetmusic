@@ -35,7 +35,7 @@ class PerformersController < ApplicationController
     def lookup
         listener_position = params[:position]
         @performers = Performer.all
-        # render :json => Performer.all.map { |p| { 'id' => p.id, 'name' => p.name } }
+        render :json => Performer.all.map { |p| { 'id' => p.id, 'name' => p.name } }
         # you need to POST to /lookup with param 'position', this param will be the value of navigator.geolocation.getCurrentPosition
     end
 

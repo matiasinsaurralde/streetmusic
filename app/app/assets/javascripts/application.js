@@ -24,7 +24,7 @@ $(document).ready( function() {
 function lookupPerformers() {
   navigator.geolocation.getCurrentPosition( function(p) {
     $.post( "/performers/lookup",
-            { 'position': 1 }, function( data ) {
+            { 'position': p.coords.latitude+','+p.coords.longitude }, function( data ) {
             console.log( 'receiving response!: ', data);
             } );
     console.log(p.coords.latitude, p.coords.longitude)
