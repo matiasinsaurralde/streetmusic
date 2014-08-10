@@ -46,38 +46,36 @@ h1 {
     padding-left: 1%;
 }
 
-input[type=submit_button] {
+input[type=submit] {
     border-style: solid;
     border-width: 0px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     border-color: black;
     width: 80%;
     height: 100px;
-    font:bold 2em sans-serif;
+    font: 2em sans-serif;
     background-color: gray;
     color:black;
 }
 
-input[type=submit_button]:hover {
+input[type=submit]:hover {
     border-style: solid;
     border-width: 0px;
-    border-radius:5px;
+    /*border-radius:5px;*/
     border-color: black;
     width: 80%;
     height: 100px;
-    font:bold 2em sans-serif;
     background-color: green;
     color:black;
 }
 
-input[type=submit_button]:active {
+input[type=submit]:active {
     border-style: solid;
     border-width: 0px;
-    border-radius:5px;
+    /*border-radius:5px;*/
     border-color: black;
     width: 80%;
     height: 100px;
-    font:bold 2em sans-serif;
     background-color: blue;
     color:black;
 }
@@ -95,7 +93,7 @@ input[type=submit_button]:active {
     color:black;
 }
 
-#submit_button{
+/*#submit_button{
     text-align: center;
     border-style: solid;
     border-width: 1px;
@@ -132,7 +130,7 @@ input[type=submit_button]:active {
     font:bold 1em sans-serif;
     background-color: blue;
     color:black;
-}
+}*/
 
 
 
