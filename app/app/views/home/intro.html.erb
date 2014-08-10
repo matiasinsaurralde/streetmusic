@@ -4,9 +4,12 @@
 
   </head>
   <body>
-    <h1>Who are you?</h1>
+    <div id="bg">
+
+    </div>
+    <h1></h1>
     <% if session[:performer_id] %>
-    <h2 style="color:yellow;">Welcome, userid: <%= Performer.find(session[:performer_id])[:email] %> </h2>
+    <h2 id="welcome">Welcome, <%= Performer.find(session[:performer_id])[:email] %>!</h2>
     <% end %>
     <input type="submit" value="Listener" onclick="window.location='/home/listener';"/>
     <br/><br/>

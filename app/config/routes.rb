@@ -14,7 +14,10 @@ Rails.application.routes.draw do
 
   # post 'twilio/receive' => 'twilio#receive'
 
-  resource :sms, only: :create
+  # resource :sms, only: :create
+
+  post '/sms', to: 'sms#create'
+  get '/sms', to: 'sms#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
